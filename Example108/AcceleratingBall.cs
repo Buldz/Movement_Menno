@@ -32,7 +32,6 @@ namespace Movement
 		public AcceleratingBall() : base("resources/ball.png")
 		{
 			Velocity = new Vector2();
-			Acceleration = new Vector2(40, 30);
 			Position = new Vector2(Settings.ScreenSize.X / 2, Settings.ScreenSize.Y / 4);
 			
 			Color = Color.SKYBLUE;
