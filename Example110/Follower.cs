@@ -50,7 +50,7 @@ namespace Movement
 			Vector2 mouse = Raylib.GetMousePosition();	
 			// Console.WriteLine(mouse);
 			
-			Acceleration = (mouse - Position); // incorrect!!
+			Acceleration = mouse - Position;
 			
 
 			// TODO implement

@@ -25,16 +25,20 @@ namespace Movement
 
 		private void HandleInput(float deltaTime)
 		{
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_A) | Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
+			{
 				spaceship.RotateLeft(deltaTime);
 			}
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_D) | Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) 
+			{
 				spaceship.RotateRight(deltaTime);
 			}
-			if (Raylib.IsKeyDown(KeyboardKey.KEY_UP)) {
+			if (Raylib.IsKeyDown(KeyboardKey.KEY_W) | Raylib.IsKeyDown(KeyboardKey.KEY_UP))
+			 {
 				spaceship.Thrust();
 			}
-			if (Raylib.IsKeyReleased(KeyboardKey.KEY_UP)) {
+			if (Raylib.IsKeyReleased(KeyboardKey.KEY_W) | Raylib.IsKeyReleased(KeyboardKey.KEY_UP))
+			{
 				spaceship.NoThrust();
 			}
 		}
