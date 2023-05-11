@@ -16,13 +16,13 @@ namespace Movement
 			core = new Core("Movement Exercises");
 			scenes = new List<SceneNode>();
 
-			scenes.Add(new Example101("Example 1.1 - Ball without vectors"));
-			scenes.Add(new Example102("Example 1.2 - Ball with vectors (velocity)"));
-			scenes.Add(new Example108("Example 1.8 - Accelerating Ball (acceleration)"));
-			scenes.Add(new Example110("Example 1.10 - Mouse follower"));
-			scenes.Add(new Example201("Example 2.1 - Bouncing Ball with Forces (wind, gravity)"));
-			scenes.Add(new Example303("Example 3.3 - Pointing in the direction of motion"));
-			scenes.Add(new Exercise305("Exercise 3.5 - SpaceShip"));
+			// scenes.Add(new Example101("Example 1.1 - Ball without vectors"));
+			// scenes.Add(new Example102("Example 1.2 - Ball with vectors (velocity)"));
+			// scenes.Add(new Example108("Example 1.8 - Accelerating Ball (acceleration)"));
+			// scenes.Add(new Example110("Example 1.10 - Mouse follower"));
+			// scenes.Add(new Example201("Example 2.1 - Bouncing Ball with Forces (wind, gravity)"));
+			// scenes.Add(new Example303("Example 3.3 - Pointing in the direction of motion"));
+			// scenes.Add(new Exercise305("Exercise 3.5 - SpaceShip"));
 			scenes.Add(new Example405("Example 4.5 - System of Particle Systems"));
 		}
 

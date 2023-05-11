@@ -10,10 +10,14 @@ namespace Movement
 		// your private fields here (add Velocity, Acceleration, and MaxSpeed)
 		List<Particle> particles;
 		private List<Color> colors;
+		Random rand = new Random();
+		float Timer;
 
 		// constructor + call base constructor
 		public ParticleSystem(float x, float y) : base()
 		{
+			Timer = 0.0f;
+
 			Position = new Vector2(x, y);
 
 			colors = new List<Color>();
@@ -27,8 +31,14 @@ namespace Movement
 			colors.Add(Color.YELLOW);
 
 			particles = new List<Particle>();
-			Random rand = new Random();
-			for (int i = 0; i < 100; i++)
+		}
+
+		// Update is called every frame
+		public override void Update(float deltaTime)
+		{
+			Timer += deltaTime;
+
+			if (Timer > 0.1f)
 			{
 				float randX = (float)rand.NextDouble();
 				float randY = (float)rand.NextDouble();
@@ -38,13 +48,16 @@ namespace Movement
 				particles.Add(p);
 				p.Rotation = (float)Math.Atan2(pos.Y, pos.X);
 				AddChild(p);
+				Timer = 0.0f;
 			}
-		}
 
-		// Update is called every frame
-		public override void Update(float deltaTime)
-		{
-			
+
+			if(particles.Count >= 10)
+			{
+				RemoveChild(particles[0]);
+				particles.RemoveAt(0);
+			}
+		
 		}
 
 
