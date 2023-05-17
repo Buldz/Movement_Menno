@@ -22,13 +22,14 @@ namespace Movement
 
 			colors = new List<Color>();
 			colors.Add(Color.WHITE);
-			colors.Add(Color.ORANGE);
-			colors.Add(Color.RED);
+			//colors.Add(Color.ORANGE);
+			//colors.Add(Color.RED);
 			colors.Add(Color.BLUE);
-			colors.Add(Color.GREEN);
-			colors.Add(Color.BEIGE);
+			//colors.Add(Color.GREEN);
+			//colors.Add(Color.BEIGE);
 			colors.Add(Color.SKYBLUE);
-			colors.Add(Color.YELLOW);
+			//colors.Add(Color.YELLOW);
+			colors.Add(Color.SKYBLUE);
 
 			particles = new List<Particle>();
 		}
@@ -38,21 +39,21 @@ namespace Movement
 		{
 			Timer += deltaTime;
 
-			if (Timer > 0.1f)
+			if (Timer > 0.001f)
 			{
 				float randX = (float)rand.NextDouble();
 				float randY = (float)rand.NextDouble();
-				Vector2 pos = new Vector2(randX, randY) * 200;
-				pos -= new Vector2(100, 100);
-				Particle p = new Particle(pos.X, pos.Y, colors[rand.Next()%colors.Count]);
+				Vector2 vel = new Vector2(randX, randY) * 200;
+				vel -= new Vector2(100, 1000);
+				Particle p = new Particle(0, 0, colors[rand.Next()%colors.Count]);
+				p.Velocity = vel;
 				particles.Add(p);
-				p.Rotation = (float)Math.Atan2(pos.Y, pos.X);
 				AddChild(p);
 				Timer = 0.0f;
 			}
 
 
-			if(particles.Count >= 10)
+			if(particles.Count >= 1300)
 			{
 				RemoveChild(particles[0]);
 				particles.RemoveAt(0);
